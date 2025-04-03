@@ -1,0 +1,24 @@
+📌 Tại sao cần CSR (Certificate Signing Request) và khóa riêng khi tạo chứng chỉ?
+Khóa riêng (.key):
+
+Đây là file bí mật, được tạo ra trên server của bạn.
+
+Dùng để mã hóa dữ liệu trong giao tiếp HTTPS.
+
+Không bao giờ chia sẻ hoặc gửi file này cho bên thứ ba.
+
+Yêu cầu chứng chỉ (CSR - .csr):
+
+Là một file chứa thông tin về tổ chức và tên miền (Common Name - CN).
+
+Được gửi cho Certificate Authority (CA) để yêu cầu cấp chứng chỉ.
+
+File .csr không chứa khóa riêng, chỉ chứa public key liên kết với khóa riêng.
+
+🛠 Mối liên hệ giữa Self-Signed CA và CSR + Khóa riêng
+✅ Khi bạn là Self-Signed CA (tự làm CA), bạn sẽ thực hiện quy trình cấp chứng chỉ như sau:
+1️⃣ Tạo CA tự ký (có ca.key và ca.crt)
+2️⃣ Website gửi CSR (website.csr) cho CA
+3️⃣ CA dùng khóa riêng của CA (ca.key) để ký CSR và tạo chứng chỉ website (website.crt)
+4️⃣ Website dùng website.key và website.crt để chạy HTTPS
+5️⃣ Trình duyệt chấp nhận chứng chỉ nếu thêm ca.crt vào Trusted Root CA
