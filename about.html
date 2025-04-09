@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Chứng Chỉ Số</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="header shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="logo">
+                    Certificate Authority
+                </div>
+                <nav>
+                    <ul class="flex items-center space-x-6">
+                        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+                        <li><a href="about.html" class="nav-link active">Giới Thiệu</a></li>
+                        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+                        <li>
+                            <button onclick="logout()" class="flex items-center gap-2 text-red-600 hover:text-red-700">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Đăng Xuất</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-4">
+        <section class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Giới Thiệu Về Chứng Chỉ Số</h2>
+            <p class="text-gray-600">Tìm hiểu chi tiết về hệ thống chứng chỉ số và các dịch vụ của chúng tôi</p>
+        </section>
+
+        <!-- About Content -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="info-card bg-white p-8 rounded-lg shadow border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6 text-left">Tầm Quan Trọng của Chứng Chỉ Số</h3>
+                <p class="text-gray-600 mb-6 text-left leading-relaxed">Trong thời đại số hóa ngày nay, việc bảo mật thông tin và xác thực danh tính trực tuyến trở nên quan trọng hơn bao giờ hết. Chứng chỉ số đóng vai trò thiết yếu trong việc:</p>
+                <ul class="space-y-4 text-left">
+                    <li class="list-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="text-gray-700">Bảo vệ dữ liệu nhạy cảm</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-user-check"></i>
+                        <span class="text-gray-700">Xác thực danh tính người dùng</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="text-gray-700">Đảm bảo tính toàn vẹn của thông tin</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-lock"></i>
+                        <span class="text-gray-700">Hỗ trợ giao dịch điện tử an toàn</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-card bg-white p-8 rounded-lg shadow border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6 text-left">Dịch Vụ Của Chúng Tôi</h3>
+                <p class="text-gray-600 mb-6 text-left leading-relaxed">Chúng tôi cung cấp các dịch vụ chứng chỉ số toàn diện:</p>
+                <ul class="space-y-4 text-left">
+                    <li class="list-item">
+                        <i class="fas fa-certificate"></i>
+                        <span class="text-gray-700">Phát hành chứng chỉ số SSL/TLS</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-signature"></i>
+                        <span class="text-gray-700">Chứng chỉ số cho chữ ký điện tử</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span class="text-gray-700">Dịch vụ xác thực danh tính</span>
+                    </li>
+                    <li class="list-item">
+                        <i class="fas fa-comments"></i>
+                        <span class="text-gray-700">Tư vấn bảo mật thông tin</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mt-12">
+            <div class="bg-white p-8 rounded-lg shadow border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6">Tại Sao Chọn Chúng Tôi?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Độ Tin Cậy Cao</h4>
+                        <p class="text-gray-600">Được công nhận bởi các tổ chức uy tín trong lĩnh vực bảo mật</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Hỗ Trợ 24/7</h4>
+                        <p class="text-gray-600">Đội ngũ kỹ thuật luôn sẵn sàng hỗ trợ khách hàng</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Giá Cả Hợp Lý</h4>
+                        <p class="text-gray-600">Cung cấp các gói dịch vụ với giá thành cạnh tranh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-600">&copy; 2025 Chứng Chỉ Số - Certificate Authority. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            }
+        };
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html> 

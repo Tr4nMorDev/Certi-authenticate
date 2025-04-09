@@ -19,29 +19,42 @@ Mở file cấu hình Nginx:
 sudo nano /etc/nginx/sites-available/default
 ```
 
+```bash
+sudo code /etc/nginx/sites-available/default
+```
+
+## 🛠 Bước 3: Timf đường dẫn tới file website.key và website.srt
+
+```bash
+realpath website.key
+realpath website.srt
+realpath website.csr
+```
+
 Thêm hoặc chỉnh sửa nội dung sau:
 
 ```nginx
 server {
-    listen 443 ssl;
-    server_name example.com; # Hoặc localhost nếu chạy local
+	listen 443 ssl default_server;
+	listen [::]:443 ssl default_server;
 
-    ssl_certificate /path/to/website.crt;
-    ssl_certificate_key /path/to/website.key;
+	root /var/www/html;
 
-    location / {
-        root /var/www/html;
-        index index.html;
-    }
+	index index.html ;
+
+	server_name localhost;
+
+	ssl_certificate     /home/mortal_user/Chung-chi-CA/website.crt;
+    ssl_certificate_key /home/mortal_user/Chung-chi-CA/website.key;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
 }
 
-# Redirect HTTP sang HTTPS
-server {
-    listen 80;
-    server_name example.com;
-
-    return 301 https://$host$request_uri;
-}
 ```
 
 📌 **Lưu ý:**

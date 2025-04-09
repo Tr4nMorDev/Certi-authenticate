@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chứng Chỉ Số - Certificate Authority</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="header shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="logo">
+                    Certificate Authority
+                </div>
+                <nav>
+                    <ul class="flex items-center space-x-6">
+                        <li><a href="index.html" class="nav-link active">Trang Chủ</a></li>
+                        <li><a href="about.html" class="nav-link">Giới Thiệu</a></li>
+                        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+                        <li>
+                            <button onclick="logout()" class="flex items-center gap-2 text-red-600 hover:text-red-700">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Đăng Xuất</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-4">
+        <section class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Chứng Chỉ Số (Certificate Authority - CA)</h2>
+            <p class="text-gray-600">Tìm hiểu về hệ thống chứng chỉ số và vai trò của nó trong bảo mật thông tin</p>
+        </section>
+
+        <!-- Info Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="info-card bg-white p-6 rounded-lg shadow border border-gray-200">
+                <h3 class="text-xl font-bold mb-2">Chứng Chỉ Số là gì?</h3>
+                <p class="text-gray-600">Chứng chỉ số (Digital Certificate) là một tài liệu điện tử được sử dụng để xác thực danh tính của một thực thể (cá nhân, tổ chức, máy chủ) trên mạng internet. Nó được phát hành bởi một tổ chức đáng tin cậy gọi là Certificate Authority (CA).</p>
+            </div>
+            <div class="info-card bg-white p-6 rounded-lg shadow border border-gray-200">
+                <h3 class="text-xl font-bold mb-2">Vai trò của CA</h3>
+                <p class="text-gray-600">Certificate Authority (CA) là tổ chức có thẩm quyền phát hành, quản lý và thu hồi chứng chỉ số. CA đóng vai trò quan trọng trong việc đảm bảo tính xác thực và bảo mật của thông tin trên mạng.</p>
+            </div>
+            <div class="info-card bg-white p-6 rounded-lg shadow border border-gray-200">
+                <h3 class="text-xl font-bold mb-2">Ứng dụng</h3>
+                <p class="text-gray-600">Chứng chỉ số được sử dụng rộng rãi trong các ứng dụng như: bảo mật website (HTTPS), email an toàn, chữ ký số, giao dịch điện tử và các dịch vụ bảo mật khác.</p>
+            </div>
+            <div class="info-card bg-white p-6 rounded-lg shadow border border-gray-200">
+                <h3 class="text-xl font-bold mb-2">Quy trình hoạt động</h3>
+                <p class="text-gray-600">1. Đăng ký chứng chỉ số<br>2. Xác thực thông tin<br>3. Phát hành chứng chỉ<br>4. Sử dụng và quản lý<br>5. Thu hồi khi cần thiết</p>
+            </div>
+        </section>
+
+        <!-- Additional Info Section -->
+        <section class="mt-12">
+            <div class="bg-white p-8 rounded-lg shadow border border-gray-200">
+                <h3 class="text-2xl font-bold mb-4">Lợi ích của Chứng Chỉ Số</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Bảo mật</h4>
+                        <p class="text-gray-600">Đảm bảo tính bảo mật và toàn vẹn của thông tin</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Xác thực</h4>
+                        <p class="text-gray-600">Xác thực danh tính người dùng và tổ chức</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="font-bold mb-2">Niềm tin</h4>
+                        <p class="text-gray-600">Tạo niềm tin cho người dùng trong giao dịch điện tử</p>
+                    </div>
+                </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-600">&copy; 2025 Chứng Chỉ Số - Certificate Authority. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            }
+        };
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

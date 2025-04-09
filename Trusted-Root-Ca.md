@@ -5,7 +5,7 @@
 ### 🔹 Trên Ubuntu/Linux:
 
 ```bash
-sudo cp localhost.crt /usr/local/share/ca-certificates/localhost.crt
+sudo cp ca.crt /usr/local/share/ca-certificates/ca.crt
 sudo update-ca-certificates
 ```
 

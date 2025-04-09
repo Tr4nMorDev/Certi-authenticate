@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Nhập</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="max-w-md w-full mx-4">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-gray-800">
+              Certificate Authority
+            </h1>
+            <!-- Hiển thị URL tại đây -->
+            <p id="current-url" class="text-sm text-gray-600 mb-4"></p>
+
+            <!-- Ô input đẹp hơn -->
+            <input
+              type="text"
+              name="test"
+              id="test"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <p class="text-gray-600 mt-2">
+              Đăng nhập để biết thêm thông tin về chứng chỉ số
+            </p>
+          </div>
+
+          <div id="login-form" class="form">
+            <div class="mb-4">
+              <label
+                for="username"
+                class="block text-gray-700 text-sm font-bold mb-2"
+                >Tên đăng nhập</label
+              >
+              <input
+                type="text"
+                id="username"
+                placeholder="Nhập tên đăng nhập"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="password"
+                class="block text-gray-700 text-sm font-bold mb-2"
+                >Mật khẩu</label
+              >
+              <input
+                type="password"
+                id="password"
+                placeholder="Nhập mật khẩu"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              onclick="login()"
+              class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Đăng Nhập
+            </button>
+          </div>
+
+          <div
+            id="error-message"
+            class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-md"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("current-url").innerText = window.location.href;
+      function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Kiểm tra thông tin đăng nhập
+        if (username && password) {
+          // Lưu thông tin đăng nhập vào localStorage
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("username", username);
+
+          // Chuyển hướng về trang chủ
+          window.location.href = "index.html";
+        } else {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.textContent = "Vui lòng nhập đầy đủ thông tin đăng nhập";
+          errorMessage.classList.remove("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>

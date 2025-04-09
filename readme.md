@@ -5,7 +5,7 @@
 Tạo chứng chỉ CA để cấp phát chứng chỉ SSL trên ubuntu tại thư mục được cấp
 
 ```sh
-openssl req -x509 -newkey rsa:4096 -keyout localhost.key -out localhost.crt -days 365 -nodes
+openssl req -x509 -newkey rsa:4096 -keyout ca.key -out ca.crt -days 365 -nodes
 ```
 
 📌 **Ví dụ thông tin nhập vào:**
@@ -28,11 +28,11 @@ Email Address: your-email@example.com (hoặc bỏ trống)
 - Bạn có thể mở 2 file này để xem chi tiết bằng cách khởi chạy
 
 ```sh
-openssl x509 -in localhost.crt -text -noout
+openssl x509 -in ca.crt -text -noout
 ```
 
 ```sh
-openssl x509 -in localhost.crt -text -noout
+openssl x509 -in ca.crt -text -noout
 ```
 
 ## 🔹 Bước 2: Tạo Chứng Chỉ SSL cho Website
@@ -51,7 +51,7 @@ openssl req -new -newkey rsa:4096 -keyout website.key -out website.csr -nodes
 ### 2.2. Dùng CA cấp chứng chỉ SSL cho website
 
 ```sh
-openssl x509 -req -in website.csr -CA localhost.crt -CAkey localhost.key -CAcreateserial -out website.crt -days 365
+openssl x509 -req -in website.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out website.crt -days 365
 ```
 
 📌 **File tạo ra:**
@@ -79,24 +79,6 @@ openssl rsa -in website.key -check
 ```
 
 ## 🌐 Bước 4: Cấu Hình HTTPS cho Web Server
-
-Ví dụ cấu hình Nginx:
-
-```nginx
-server {
-    listen 443 ssl;
-    server_name example.com;
-
-    ssl_certificate /path/to/website.crt;
-    ssl_certificate_key /path/to/website.key;
-}
-```
-
-Sau đó reload lại Nginx:
-
-```sh
-sudo systemctl reload nginx
-```
 
 ## ✅ Bước 5: Thêm CA vào Trusted Root CA của Trình Duyệt
 
