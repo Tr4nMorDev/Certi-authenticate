@@ -20,7 +20,9 @@ sudo nano /etc/nginx/sites-available/default
 ```
 
 ```bash
+sudo chown $USER /etc/nginx/sites-available/default
 sudo code /etc/nginx/sites-available/default
+sudo -E code /etc/nginx/sites-available/default --user-data-dir="~/.vscode-root" --no-sandbox
 ```
 
 ## 🛠 Bước 3: Timf đường dẫn tới file website.key và website.srt
@@ -44,8 +46,8 @@ server {
 
 	server_name localhost;
 
-	ssl_certificate     /home/mortal_user/Chung-chi-CA/website.crt;
-    ssl_certificate_key /home/mortal_user/Chung-chi-CA/website.key;
+	ssl_certificate     /home/mortal_user/Chung-chi-CA/172.28.206.187.pem;
+    ssl_certificate_key /home/mortal_user/Chung-chi-CA/172.28.206.187-key.pem;
 
 	location / {
 		# First attempt to serve request as file, then
