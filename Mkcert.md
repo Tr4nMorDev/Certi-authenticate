@@ -40,3 +40,5 @@ nằm ở : /home/mortal_user/.local/share/mkcert
 file này nằm ở cp : sudo cp "$(mkcert -CAROOT)/rootCA.pem" /home/mortal_user/Chung-chi-CA/rootCA.crt
 
 ## Bước 6 :
+
+sudo cp /home/mortal_user/Chung-chi-CA/web-basic/\*.html /var/www/html/

@@ -27,12 +27,6 @@ sudo -E code /etc/nginx/sites-available/default --user-data-dir="~/.vscode-root"
 
 ## 🛠 Bước 3: Timf đường dẫn tới file website.key và website.srt
 
-```bash
-realpath website.key
-realpath website.srt
-realpath website.csr
-```
-
 Thêm hoặc chỉnh sửa nội dung sau:
 
 ```nginx
